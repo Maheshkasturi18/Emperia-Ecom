@@ -1,0 +1,20 @@
+center::selection{
+    color: black;
+}
+
+
+.testimonial-bg{
+    background-color: #1DBFC1;
+}
+
+.testimonial-bg p{
+    font-size: 17px;
+}
+
+.testi_img{
+    border-radius: 75px;
+}
+
+.star{
+    color:#ffd700;
+}

@@ -1,0 +1,20 @@
+.dist-bg{
+    background-color: rgb(242, 253, 253);
+}
+
+
+.dist-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    /* background-image: url("images/corevalue-main-img.jpg"); */
+}
+
+.dist-bg p,ul {
+    font-size: 18px;
+}
+
+.dist-bg b{
+    color: #1950c4;
+}

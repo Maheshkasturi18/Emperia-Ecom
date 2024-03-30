@@ -1,0 +1,74 @@
+
+
+.copyright{
+    font-size: 15px;
+}
+
+
+footer li{
+    font-size: 17px;
+}
+
+
+
+.tushar{
+    color: rgb(39, 39, 39);
+    transition: all 0.5s ease;
+}
+
+.tushar:hover{
+    color: #1DBFC1;
+}
+
+
+.fb{
+    color: #1DBFC1;
+    transition: all 1s ease;
+}
+
+.fb:hover{
+    color: black;
+}
+
+
+.ig{
+    color: #1DBFC1;
+    transition: all 1s ease;
+}
+
+.ig:hover{
+    color: black;
+}
+
+
+
+.in{
+    color: #1DBFC1;
+    transition: all 1s ease;
+}
+
+.in:hover{
+    color: black;
+}
+
+
+
+.twt{
+    color: #1DBFC1;
+    transition: all 1s ease;
+}
+
+.twt:hover{
+    color: black;
+}
+
+
+
+.yt{
+    color: #1DBFC1;
+    transition: all 1s ease;
+}
+
+.yt:hover{
+    color: black;
+}

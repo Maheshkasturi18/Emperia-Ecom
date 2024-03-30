@@ -1,0 +1,20 @@
+.core-bg{
+    background-color: rgb(242, 253, 253);
+}
+
+
+.core-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    /* background-image: url("public/images/corevalue-main-img.jpg"); */
+}
+
+.core-bg p{
+    font-size: 18px;
+}
+
+.core-bg h1{
+    color:  #1DBFC1;
+}

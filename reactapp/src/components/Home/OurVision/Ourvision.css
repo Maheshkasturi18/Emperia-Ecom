@@ -1,0 +1,40 @@
+.card-img-overlay {
+  z-index: 11;
+}
+.card-title {
+  font-size: 2.7rem;
+  font-family: "Times New Roman", Times, serif;
+  color: #1dbfc1;
+}
+.card-text {
+  font-size: 24px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.btn1 {
+  background-color: transparent;
+  border: 1px solid #1dbfc1;
+}
+
+.btn {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 878px) {
+  .card-text {
+    font-size: 1.3rem;
+  }
+  .btn1 {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 623px) {
+  .card-text {
+    font-size: 1em;
+  }
+}
+
+/* button .slick-arrow .slick-next {
+  display: none;
+} */

@@ -1,0 +1,9 @@
+
+.bg{
+    background-color: #1DBFC1;
+    
+}
+
+center::selection{
+    color: black;
+}

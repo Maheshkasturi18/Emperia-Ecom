@@ -1,0 +1,18 @@
+
+
+.bv-bg{
+    background-color: rgb(242, 253, 253);
+    /* background-image: url("brand_value_bg-img.svg");
+    background-position: end;
+    background-repeat: no-repeat; */
+    /* background-size: con; */
+}
+
+.bv-bg p{
+    font-size: 17px;
+}
+
+
+.bv-heading{
+    color: #1DBFC1;
+}

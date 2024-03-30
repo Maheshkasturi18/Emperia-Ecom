@@ -1,0 +1,118 @@
+
+
+
+.product-bg{
+    background-color: rgb(242, 253, 253);
+}
+
+.product-bg center{
+    color: #1DBFC1;
+}
+
+.img-wrapper{
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+
+.img-wrapper img{
+    display: block;
+}
+
+.img-wrapper .content{
+    height: 150px;
+    padding:5px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.img-wrapper .content a{
+    background-color: #1DBFC1;
+}
+
+.img-wrapper img,
+.img-wrapper .content{
+    transition: all 500ms ease-in-out;
+}
+
+
+ .img-wrapper .content.slide-up{
+    transform: translateY(190%);
+}
+
+.img-wrapper:hover .content.slide-up{
+    transform: translateY(90%);
+}
+
+@media screen and (max-width : 1475px) {
+    .img-wrapper .content.slide-up{
+        transform: translateY(210%);
+    }
+
+    .img-wrapper:hover .content.slide-up{
+        transform: translateY(120%);
+    }
+}
+
+@media screen and (max-width : 1390px) {
+    .img-wrapper:hover .content.slide-up{
+        transform: translateY(90%);
+    }
+}
+
+@media screen and (max-width : 1200px) {
+    .img-wrapper:hover .content.slide-up{
+        transform: translateY(65%);
+    }
+}
+
+
+@media screen and (max-width : 992px) {
+    .img-wrapper .content.slide-up{
+        transform: translateY(225%);
+    }
+    .img-wrapper:hover .content.slide-up{
+        transform: translateY(135%);
+    }
+}
+
+
+@media screen and (max-width : 767px) {
+    .img-wrapper:hover .content.slide-up{
+        transform: translateY(80%);
+    }
+}
+@media screen and (max-width : 752px) {
+    .img-wrapper .content.slide-up{
+        transform: translateY(340%);
+    }
+    .img-wrapper:hover .content.slide-up{
+        transform: translateY(260%);
+    }
+}
+@media screen and (max-width : 578px) {
+    .img-wrapper:hover .content.slide-up{
+        transform: translateY(240%);
+    }
+}
+
+
+@media screen and (max-width : 500px) {
+    .img-wrapper:hover .content.slide-up{
+        transform: translateY(130%);
+    }
+}
+@media screen and (max-width : 375px) {
+    .img-wrapper:hover .content.slide-up{
+        transform: translateY(100%);
+    }
+}
+@media screen and (max-width : 330px) {
+    .img-wrapper:hover .content.slide-up{
+        transform: translateY(60%);
+    }
+}

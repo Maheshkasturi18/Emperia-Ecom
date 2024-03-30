@@ -1,0 +1,20 @@
+.lead-bg{
+    background-color: rgb(242, 253, 253);
+}
+
+.lead-bg p{
+    font-size: 18px;
+}
+
+.lead-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    /* background-image: url("public/images/leadership-main-img.jpg"); */
+}
+
+.lead-bg  i{
+    font-size: 30px;
+    color:  #1DBFC1;
+}
