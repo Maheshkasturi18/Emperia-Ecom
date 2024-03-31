@@ -29,7 +29,7 @@ const seedDatabase = async () => {
         title: "Uncategorized",
         description: "ARMSX",
         price: 1999.0,
-        image: "images/product_img1.jpg",
+        image: "https://emperia1900.com/wp-content/uploads/2023/07/ARMSX_FOP-300x300.jpg",
         qnty: 0,
       },
       {
@@ -37,7 +37,7 @@ const seedDatabase = async () => {
         title: "General Care",
         description: "Emperia 1900 Carpet Detergent 5 Litres",
         price: 1999.0,
-        image: "images/product_img2.jpg",
+        image: "img/product_img2.jpg",
         qnty: 0,
       },
       {
@@ -45,7 +45,7 @@ const seedDatabase = async () => {
         title: "General Care",
         description: "Emperia 1900 Carpet Shampoo 5 Litres",
         price: 1999.0,
-        image: "images/product_img3.jpg",
+        image: "img/product_img3.jpg",
         qnty: 0,
       },
       {
@@ -53,7 +53,7 @@ const seedDatabase = async () => {
         title: "Kitchen Care",
         description: "Emperia 1900 K-Pro Descaler 5 Litres",
         price: 1999.0,
-        image: "images/product_img4.jpg",
+        image: "img/product_img4.jpg",
         qnty: 0,
       },
       {
@@ -61,7 +61,7 @@ const seedDatabase = async () => {
         title: "Kitchen Care",
         description: "Emperia 1900 K-Pro Dish Wash Liquid (5L)",
         price: 999.0,
-        image: "images/product_img5.jpg",
+        image: "img/product_img5.jpg",
         qnty: 0,
       },
       {
@@ -69,7 +69,7 @@ const seedDatabase = async () => {
         title: "Kitchen Care",
         description: "Emperia 1900 K-Pro Heavy - Duty Degreaser 5 Litres",
         price: 999.0,
-        image: "images/product_img6.jpg",
+        image: "img/product_img6.jpg",
         qnty: 0,
       },
       {
@@ -77,7 +77,7 @@ const seedDatabase = async () => {
         title: "Kitchen Care",
         description: "Emperia 1900 K-Pro Machine Dish Wash 5 Litres",
         price: 2999.0,
-        image: "images/product_img7.jpg",
+        image: "img/product_img7.jpg",
         qnty: 0,
       },
       {
@@ -85,7 +85,7 @@ const seedDatabase = async () => {
         title: "Kitchen Care",
         description: "Emperia 1900 K-Pro Machine Rinse 5 Litres",
         price: 3999.0,
-        image: "images/product_img8.jpg",
+        image: "img/product_img8.jpg",
         qnty: 0,
       },
       {
@@ -93,7 +93,7 @@ const seedDatabase = async () => {
         title: "Kitchen Care",
         description: "Emperia 1900 K-Pro Multi-Purpose Cleaner (5L)",
         price: 999.0,
-        image: "images/product_img9.jpg",
+        image: "img/product_img9.jpg",
         qnty: 0,
       },
       {
@@ -101,7 +101,7 @@ const seedDatabase = async () => {
         title: "Kitchen Care",
         description: "Emperia 1900 K-Pro Oven & Grill Cleaner 5 Litres",
         price: 1999.0,
-        image: "images/product_img10.jpg",
+        image: "img/product_img10.jpg",
         qnty: 0,
       },
       {
@@ -109,7 +109,7 @@ const seedDatabase = async () => {
         title: "General Care",
         description: "Emperia 1900 SS Shine 5 Litres",
         price: 2999.0,
-        image: "images/product_img11.jpg",
+        image: "img/product_img11.jpg",
         qnty: 0,
       },
       {
@@ -117,7 +117,7 @@ const seedDatabase = async () => {
         title: "Bathroom Care",
         description: "Emperia 1900 Vol 1 Bathroom Cleaner 5 Litres",
         price: 1499.0,
-        image: "images/product_img12.jpg",
+        image: "img/product_img12.jpg",
         qnty: 0,
       },
       {
@@ -125,7 +125,7 @@ const seedDatabase = async () => {
         title: "Floor & Surface Care",
         description: "Emperia 1900 Vol 2 Hard Surface Cleaner 5 Litres",
         price: 1499.0,
-        image: "images/product_img13.jpg",
+        image: "img/product_img13.jpg",
         qnty: 0,
       },
       {
@@ -133,7 +133,7 @@ const seedDatabase = async () => {
         title: "General Care",
         description: "Emperia 1900 Vol 3 Glass Cleaner 5 Litres",
         price: 1999.0,
-        image: "images/product_img14.jpg",
+        image: "img/product_img14.jpg",
         qnty: 0,
       },
       {
@@ -141,7 +141,7 @@ const seedDatabase = async () => {
         title: "General Care",
         description: "Emperia 1900 Vol 4 Wood Maintainer 5 Litres",
         price: 2999.0,
-        image: "images/product_img15.jpg",
+        image: "img/product_img15.jpg",
         qnty: 0,
       },
       {
@@ -149,7 +149,7 @@ const seedDatabase = async () => {
         title: "General Care",
         description: "Emperia 1900 Vol 5 Air Freshener 5 Litres",
         price: 1499.0,
-        image: "images/product_img16.jpg",
+        image: "img/product_img16.jpg",
         qnty: 0,
       },
       {
@@ -157,7 +157,7 @@ const seedDatabase = async () => {
         title: "General Care",
         description: "Emperia 1900 Vol 5 Air Freshener Blossom 5 Litres",
         price: 1499.0,
-        image: "images/product_img17.jpg",
+        image: "img/product_img17.jpg",
         qnty: 0,
       },
       {
@@ -165,7 +165,7 @@ const seedDatabase = async () => {
         title: "Bathroom Care",
         description: "Emperia 1900 Vol 6 Toilet Cleaner 5 Litres",
         price: 999.0,
-        image: "images/product_img18.jpg",
+        image: "img/product_img18.jpg",
         qnty: 0,
       },
       {
@@ -173,7 +173,7 @@ const seedDatabase = async () => {
         title: "Floor & Surface Care",
         description: "Emperia 1900 Vol 7 Floor Cleaner 5 Litres",
         price: 999.0,
-        image: "images/product_img19.jpg",
+        image: "img/product_img19.jpg",
         qnty: 0,
       },
       {
@@ -181,7 +181,7 @@ const seedDatabase = async () => {
         title: "Bathroom Care",
         description: " Emperia 1900 Vol 9 Shine & Descaler 5 Litres",
         price: 1499.0,
-        image: "images/product_img20.jpg",
+        image: "img/product_img20.jpg",
         qnty: 0,
       },
       {
@@ -189,7 +189,7 @@ const seedDatabase = async () => {
         title: "Personal Care",
         description: "Grabbit First Hand Sanitizer 5 Litres",
         price: 999.0,
-        image: "images/product_img21.jpg",
+        image: "img/product_img21.jpg",
         qnty: 0,
       },
       {
@@ -197,7 +197,7 @@ const seedDatabase = async () => {
         title: "Personal Care",
         description: "Grabbit First Hand wash 5 Litres",
         price: 999.0,
-        image: "images/product_img22.jpg",
+        image: "img/product_img22.jpg",
         qnty: 0,
       },
     ];
@@ -219,7 +219,6 @@ app.get("/api/products", async (req, res) => {
     // Send the entire books array as JSON response
     res.json(allProducts);
   } catch (error) {
-    Ff;
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });
   }

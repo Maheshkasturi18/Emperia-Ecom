@@ -11,6 +11,7 @@ import Corevalue from "./components/AboutUs/Corevalue/Corevalue";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Product from "./components/Products/Product";
+import Cart from "./components/Cart";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="corevalue/" element={<Corevalue />}></Route>
           <Route path="contactus/" element={<Contactus />}></Route>
           <Route path="products/" element={<Product />}></Route>
+          <Route path="cart/" element={<Cart />}></Route>
         </Routes>
         <Footer />
       </Router>

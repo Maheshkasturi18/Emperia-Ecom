@@ -140,19 +140,6 @@
   }
 }
 
-#button {
-  color: #1dbfc1;
-  border: 1px solid #1dbfc1;
-  transition: all 0.5s ease;
-}
 
-#button:hover {
-  color: white;
-  background-color: #1dbfc1;
-}
 
-/* .cart span{
-    font-size: 12px;
-    top: -5px;
-    left: 40px;
-} */
+
