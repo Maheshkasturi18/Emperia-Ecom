@@ -34,29 +34,30 @@ export default function Product() {
   }, []); // Empty dependency array ensures this effect runs only once, when component mounts
 
   return (
-    <div className="container-fluid bg-blue">
-      <ToastContainer position="top-center" autoClose={2000} />{" "}
+    <div className="container-fluid bg-blue px-5">
+      <ToastContainer position="top-center" autoClose={1000} />{" "}
       {/* Container for toast notifications */}
-      <div className="row py-5 px-3">
+      <div className="row py-5 px-4 mx-1 gap-4">
         {products.map((product) => (
-          <div key={product.id} className="card col-lg-3 mb-4 border-0 p-0 bg-blue">
-            <img src={product.image} alt="" className="img-fluid" style={{width:"280px"}}/>
+          <div key={product.id} className="card col-lg-3 mb-4 border-0 p-0 bg-blue " style={{width:"280px"}}>
+            <img src={product.image} alt="" className="img-fluid" />
 
-            <div className="card-body ">
-              <p>{product.title}</p>
+            <div className="card-body px-0">
+              <p className="text-secondary">{product.title}</p>
               <h5>{product.description}</h5>
               <p>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
+                <i className="fa-regular fa-star"></i>
+                <i className="fa-regular fa-star"></i>
+                <i className="fa-regular fa-star"></i>
+                <i className="fa-regular fa-star"></i>
+                <i className="fa-regular fa-star"></i>
               </p>
 
-              <p className="text-center fs-5">₹ {product.price}</p>
+              <p className="text-center fw-bold">₹ {product.price}.00</p>
               <button
                 type="button"
-                className="btn btn-primary"
+                id="button"
+                className="btn btn-sm fs-5 px-4 py-2 py-lg-2 rounded-pill  fw-semibold"
                 onClick={() => send(product)}
               >
                 Add to cart

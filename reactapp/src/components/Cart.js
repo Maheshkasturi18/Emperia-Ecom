@@ -43,19 +43,20 @@ export default function Cart() {
   };
 
   return (
-    <section>
-      <div className="container d-flex justify-content-center py-4 ">
+    <section className="bg-blue">
+      <div className="container  py-4 ">
+        <h2>Cart</h2>
         {getdata.length ? (
-          <div class="add-to-cart">
+          <div class="add-to-cart my-4">
             <table className="mb-5">
               <thead>
                 <tr>
-                  <th className="text-center">Product</th>
-                  <th className="text-center">Description</th>
-                  <th className="text-center">price</th>
-                  <th className="text-center">Quantity</th>
-                  <th className="text-center">SubTotal</th>
-                  <th className="text-center">Action</th>
+                  <th className="text-center"></th>
+                  <th className="text-center"></th>
+                  <th className="text-center fs-5">Product</th>
+                  <th className="text-center fs-5">Price</th>
+                  <th className="text-center fs-5">Quantity</th>
+                  <th className="text-center fs-5">Subtotal</th>
                 </tr>
               </thead>
 
@@ -67,6 +68,17 @@ export default function Cart() {
                     <>
                       <tr key={e.id}>
                         <td className="text-center">
+                          <i
+                            className="fa-solid fa-trash"
+                            style={{
+                              color: "red",
+                              padding: "5px",
+                              cursor: "pointer",
+                            }}
+                            onClick={() => dlt(e.id)}
+                          ></i>
+                        </td>
+                        <td className="text-center">
                           <Link to={`/cardDetails/${e.id}`}>
                             <img
                               src={e.image}
@@ -74,8 +86,8 @@ export default function Cart() {
                             />
                           </Link>
                         </td>
-                        <td className="text-center">{e.description}</td>
-                        <td className="text-center">{e.price}</td>
+                        <td className="text-center fs-5">{e.description}</td>
+                        <td className="text-center">₹ {e.price}.00</td>
 
                         <td className="text-center">
                           <div
@@ -107,18 +119,7 @@ export default function Cart() {
                           </div>
                         </td>
 
-                        <td className="text-center">{e.price * e.qnty}</td>
-                        <td className="text-center">
-                          <i
-                            className="fa-solid fa-trash"
-                            style={{
-                              color: "red",
-                              padding: "5px",
-                              cursor: "pointer",
-                            }}
-                            onClick={() => dlt(e.id)}
-                          ></i>
-                        </td>
+                        <td className="text-center">₹ {e.price * e.qnty}.00</td>
                       </tr>
                     </>
                   );
@@ -127,17 +128,29 @@ export default function Cart() {
             </table>
 
             <div className="row">
-              <div className="col-lg-8"></div>
-              <div className="col-lg-4">
+              <div className="col-lg-7"></div>
+              <div className="col-lg-5">
                 <table>
                   <thead>
                     <tr>
-                      <th className="text-center">Total</th>
+                      <th className="fs-3 px-4 py-3">Cart totals</th>
                     </tr>
                   </thead>
+
                   <tbody>
                     <tr>
-                      <td className="text-center">{price}</td>
+                      <td className="text-center fw-bold p-4">₹ {price}.00</td>
+                    </tr>
+                    <tr>
+                      <td className="p-4">
+                        <button
+                          type="button"
+                          id="button"
+                          className="btn btn-sm fs-5 px-4 py-2 py-lg-2 rounded-pill  fw-semibold"
+                        >
+                          Procced to checkout
+                        </button>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -146,9 +159,9 @@ export default function Cart() {
           </div>
         ) : (
           <>
-            <div className="d-flex">
-              <h3>Your cart is empty</h3>
-              <img src="cart.gif" alt="Cart" className="cart-gif" />
+            <div className="d-flex px-3 py-4 my-4 cart-empty">
+              <i className="fa-solid fa-store me-3 mt-1"></i>
+              <h5 className="m-0">Your cart is currently empty</h5>
             </div>
 
             <Link to="/products" className="">

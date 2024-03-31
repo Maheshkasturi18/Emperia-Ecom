@@ -83,11 +83,11 @@ export default function Navbar() {
                   <Link
                     className="nav-link dropdown-toggle px-3 px-lg-2"
                     to="products"
-                    // data-bs-toggle="dropdown"
+                    data-bs-toggle="dropdown tab"
                   >
                     Products
                   </Link>
-                  {/* <ul className="dropdown-menu dropdown-content">
+                  <ul className="dropdown-menu dropdown-content">
                     <li>
                       <Link className="dropdown-item" to="personalcare">
                         Personal Care
@@ -125,7 +125,7 @@ export default function Navbar() {
                         Kitchen Care
                       </Link>
                     </li>
-                  </ul> */}
+                  </ul>
                 </li>
 
                 <li className="nav-item px-1 py-1  fw-semibold item-list">
@@ -209,12 +209,6 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* <div className="cart">
-              <Link className="navbar-brand  m-0 fs-3" to="/">
-                <i class="fa-solid fa-cart-shopping"></i>
-                
-              </Link>
-            </div> */}
 
           <Link to="/cart" type="button" className="btn  position-relative">
             <i className="fa-solid fa-cart-shopping cart"></i>
