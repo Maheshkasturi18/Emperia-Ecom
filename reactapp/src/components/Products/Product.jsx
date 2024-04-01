@@ -2,10 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { ADD } from "../../Redux/Actions/action";
-
 
 export default function Product() {
   const [products, setProducts] = useState([]);
@@ -14,11 +12,11 @@ export default function Product() {
 
   const send = (product) => {
     dispatch(ADD(product));
-    toast.success("Item  added in your cart!"); // Show custom toast notification
+    toast.success("Item  added in your cart!"); 
   };
 
   useEffect(() => {
-    // Define a function to fetch product data
+    
     const fetchProducts = async () => {
       try {
         const response = await axios.get("http://localhost:8000/api/products");
@@ -30,42 +28,47 @@ export default function Product() {
       }
     };
 
-    fetchProducts(); // Call the fetchProducts function when the component mounts
-  }, []); // Empty dependency array ensures this effect runs only once, when component mounts
+    fetchProducts(); 
+  }, []); 
 
   return (
-    <div className="container-fluid bg-blue px-5">
-      <ToastContainer position="top-center" autoClose={1000} />{" "}
-      {/* Container for toast notifications */}
-      <div className="row py-5 px-4 mx-1 gap-4">
-        {products.map((product) => (
-          <div key={product.id} className="card col-lg-3 mb-4 border-0 p-0 bg-blue " style={{width:"280px"}}>
-            <img src={product.image} alt="" className="img-fluid" />
+    <section className="bg-blue">
+      <div className="container ">
+        <ToastContainer position="top-center" autoClose={1000} />
+        
+        <div className="row py-5">
+          {products.map((product) => (
+            <div
+              key={product.id}
+              className="card col-lg-3 col-md-4 col-6 mb-4 border-0 bg-blue product-card"
+            >
+              <img src={product.image} alt="" className="img-fluid" />
 
-            <div className="card-body px-0">
-              <p className="text-secondary">{product.title}</p>
-              <h5>{product.description}</h5>
-              <p>
-                <i className="fa-regular fa-star"></i>
-                <i className="fa-regular fa-star"></i>
-                <i className="fa-regular fa-star"></i>
-                <i className="fa-regular fa-star"></i>
-                <i className="fa-regular fa-star"></i>
-              </p>
+              <div className="card-body px-0">
+                <p className="text-secondary">{product.title}</p>
+                <h5>{product.description}</h5>
+                <p>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                  <i className="fa-regular fa-star"></i>
+                </p>
 
-              <p className="text-center fw-bold">₹ {product.price}.00</p>
-              <button
-                type="button"
-                id="button"
-                className="btn btn-sm fs-5 px-4 py-2 py-lg-2 rounded-pill  fw-semibold"
-                onClick={() => send(product)}
-              >
-                Add to cart
-              </button>
+                <p className="text-center fw-bold">₹ {product.price}.00</p>
+                <button
+                  type="button"
+                  id="button"
+                  className="btn btn-sm fs-5 px-md-4  py-md-2 rounded-pill  fw-semibold"
+                  onClick={() => send(product)}
+                >
+                  Add to cart
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

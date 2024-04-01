@@ -23,7 +23,7 @@
 
 .cart-empty {
   border-top: 3px solid black;
-  background-color: rgb(247, 247, 247)
+  background-color: rgb(247, 247, 247);
 }
 
 .add-to-cart {
@@ -37,18 +37,20 @@
   border: 1px solid #ddd;
 }
 
-.add-to-cart th{
+.add-to-cart th {
   padding: 15px;
   border-bottom: 1px solid #ddd;
   text-align: left;
 }
 
-
+.add-to-cart tr {
+  /* padding: 10px; */
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
 
 .add-to-cart td {
   padding: 10px;
-  border-bottom: 1px solid #ddd;
-  text-align: left;
 }
 
 .add-to-cart th {
@@ -57,6 +59,63 @@
 
 /* products */
 
+.delete-btn {
+  color: red;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.img-cart{
+  width: 5rem;
+  height: 5rem;
+}
+
 .bg-blue {
   background-color: rgb(242, 253, 253);
+}
+
+.qnty-btn {
+  width: 100;
+  cursor: pointer;
+  border: 1px solid black;
+  color: #111;
+  padding: 5px 10px;
+  margin: auto;
+}
+
+.inc-btn,.dec-btn{
+  font-size: 24;
+  padding: 5px 20px;
+}
+
+.product-card {
+  width: 279px;
+}
+
+@media screen and (max-width: 900px) {
+  .product-card {
+    width: 240px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .product-card {
+    width: 212px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .product-card {
+    width: 187px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .product-card {
+    width: 160px;
+  }
 }
