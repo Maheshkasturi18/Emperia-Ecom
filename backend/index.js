@@ -28,7 +28,7 @@ const seedDatabase = async () => {
         id: 1,
         title: "Uncategorized",
         description: "ARMSX",
-        price: 1999.00,
+        price: 1999.0,
         image:
           "https://emperia1900.com/wp-content/uploads/2023/07/ARMSX_FOP-300x300.jpg",
         qnty: 0,
@@ -236,8 +236,17 @@ seedDatabase();
 // Define API endpoint for fetching all products
 app.get("/api/products", async (req, res) => {
   try {
-    // Fetch all products from the database
-    const allProducts = await Product.find();
+    const { title } = req.query;
+
+    let allProducts;
+
+    if (title) {
+      // If the title query parameter is provided, filter products by title
+      allProducts = await Product.find({ title });
+    } else {
+      // If no title parameter provided, fetch all products
+      allProducts = await Product.find();
+    }
     // Send the entire products array as JSON response
     res.json(allProducts);
   } catch (error) {
@@ -246,6 +255,7 @@ app.get("/api/products", async (req, res) => {
   }
 });
 
+// port
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

@@ -12,6 +12,11 @@ import Corevalue from "./components/AboutUs/Corevalue/Corevalue";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Product from "./components/Products/Product";
 import Cart from "./components/Cart";
+import PersonalCare from "./components/Products/PersonalCare";
+import GenCare from "./components/Products/GenCare";
+import SurfaceCare from "./components/Products/SurfaceCare";
+import KitchenCare from "./components/Products/KitchenCare";
+import BathCare from "./components/Products/BathCare";
 
 function App() {
   return (
@@ -27,6 +32,11 @@ function App() {
           <Route path="corevalue/" element={<Corevalue />}></Route>
           <Route path="contactus/" element={<Contactus />}></Route>
           <Route path="products/" element={<Product />}></Route>
+          <Route path="personalcare/" element={<PersonalCare />}></Route>
+          <Route path="generalcare/" element={<GenCare />}></Route>
+          <Route path="floorcare/" element={<SurfaceCare />}></Route>
+          <Route path="kitchencare/" element={<KitchenCare/>}></Route>
+          <Route path="bathroomcare/" element={<BathCare />}></Route>
           <Route path="cart/" element={<Cart />}></Route>
         </Routes>
         <Footer />

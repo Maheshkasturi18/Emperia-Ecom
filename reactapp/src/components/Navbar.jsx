@@ -152,7 +152,7 @@ export default function Navbar() {
 
                   <ul className="dropdown-menu dropdown-content">
                     <li>
-                      <Link className="dropdown-item" to="/">
+                      <Link className="dropdown-item" to="https://www.facebook.com/">
                         Facebook
                       </Link>
                     </li>
@@ -160,7 +160,7 @@ export default function Navbar() {
                       <hr class="dropdown-divider" />
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/">
+                      <Link className="dropdown-item" to="https://www.instagram.com/">
                         Instagram
                       </Link>
                     </li>
@@ -168,7 +168,7 @@ export default function Navbar() {
                       <hr class="dropdown-divider" />
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/">
+                      <Link className="dropdown-item" to="https://in.linkedin.com/">
                         LinkedIn
                       </Link>
                     </li>
@@ -176,7 +176,7 @@ export default function Navbar() {
                       <hr class="dropdown-divider" />
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/">
+                      <Link className="dropdown-item" to="https://twitter.com/">
                         Twitter
                       </Link>
                     </li>
@@ -184,7 +184,7 @@ export default function Navbar() {
                       <hr class="dropdown-divider" />
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/">
+                      <Link className="dropdown-item" to="https://youtube.com/">
                         Youtube
                       </Link>
                     </li>

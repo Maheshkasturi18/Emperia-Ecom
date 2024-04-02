@@ -5,11 +5,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { ADD } from "../../Redux/Actions/action";
 
-export default function Product() {
+export default function BathCare() {
   const [products, setProducts] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const itemsPerPage = 12;
 
   const dispatch = useDispatch();
 
@@ -21,9 +18,12 @@ export default function Product() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/products");
+        const response = await axios.get("http://localhost:8000/api/products", {
+        params: {
+          title: "Bathroom Care"
+        }
+      });
         setProducts(response.data); // Set the fetched product data in state
-        setTotalPages(Math.ceil(response.data.length / itemsPerPage));
       } catch (error) {
         console.error("Error fetching data:", error);
         // Handle errors, such as displaying a toast message
@@ -34,30 +34,13 @@ export default function Product() {
     fetchProducts();
   }, []);
 
-  const nextPage = () => {
-    setCurrentPage(currentPage + 1);
-  };
-
-  const prevPage = () => {
-    setCurrentPage(currentPage - 1);
-  };
-
-  const visibleProducts = products.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
-
   return (
     <section className="bg-blue">
       <div className="container py-5">
         <ToastContainer position="top-center" autoClose={1000} />
 
         <div className="d-flex justify-content-between align-items-center">
-          <h5 className="m-0">
-            Showing
-            {currentPage === 1 ? " 1-12 " : " 13-22 "}
-            results
-          </h5>
+          <h5 className="m-0">Showing all {products.length} results</h5>
 
           <select className="filter-sort">
             <option>Default sorting</option>
@@ -70,7 +53,7 @@ export default function Product() {
         </div>
 
         <div className="row py-5">
-          {visibleProducts.map((product) => (
+          {products.map((product) => (
             <div
               key={product.id}
               className="card col-lg-3 col-md-4 col-6 mb-4 border-0 bg-blue product-card"
@@ -100,42 +83,6 @@ export default function Product() {
               </div>
             </div>
           ))}
-        </div>
-
-        <div>
-          {/* Render previous button only if currentPage is not 1 */}
-          {currentPage !== 1 && (
-            <button onClick={prevPage} className="page-btn">
-              <i class="fa-solid fa-arrow-left-long"></i>
-            </button>
-          )}
-
-          {(() => {
-            const buttons = [];
-            for (let num = 1; num <= totalPages; num++) {
-              const isActive = num === currentPage;
-              const buttonClass = isActive
-                ? "page-num-btn active"
-                : "page-num-btn";
-              buttons.push(
-                <button
-                  key={num}
-                  onClick={() => setCurrentPage(num)}
-                  className={buttonClass}
-                >
-                  {num}
-                </button>
-              );
-            }
-            return buttons;
-          })()}
-
-          {/* Render next button only if currentPage is not equal to totalPages */}
-          {currentPage !== totalPages && (
-            <button onClick={nextPage} className="page-btn">
-              <i class="fa-solid fa-arrow-right-long"></i>
-            </button>
-          )}
         </div>
       </div>
     </section>
