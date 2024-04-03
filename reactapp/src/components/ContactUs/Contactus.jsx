@@ -280,7 +280,7 @@ export default function Contactus() {
           <iframe
             width="100%"
             height="100%"
-            title=""
+            title="map"
             id="gmap_canvas"
             src="https://maps.google.com/maps?q=emperia+1900&t=&z=15&ie=UTF8&iwloc=&output=embed"
             frameborder="0"

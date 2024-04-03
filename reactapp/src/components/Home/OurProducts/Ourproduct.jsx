@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import "./Ourproduct.css";
+import { Link } from "react-router-dom";
 
 export default class Ourproduct extends Component {
   render() {
@@ -57,9 +58,9 @@ export default class Ourproduct extends Component {
                 <p className="mb-1">
                   <i class="fa-solid fa-indian-rupee-sign me-2"></i>4999.00
                 </p>
-                <a className="btn text-uppercase border border-info text-white fw-bold">
+                <Link  to="" className="btn text-uppercase border border-info text-white fw-bold">
                   add to cart
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -76,9 +77,9 @@ export default class Ourproduct extends Component {
                 <p className="mb-1">
                   <i class="fa-solid fa-indian-rupee-sign me-2"></i>999.00
                 </p>
-                <a className="btn text-uppercase border border-info text-white fw-bold">
+                <Link  to=""className="btn text-uppercase border border-info text-white fw-bold">
                   add to cart
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -95,9 +96,9 @@ export default class Ourproduct extends Component {
                 <p className="mb-1">
                   <i class="fa-solid fa-indian-rupee-sign me-2"></i>999.00
                 </p>
-                <a className="btn text-uppercase border border-info text-white fw-bold">
+                <Link  to=""className="btn text-uppercase border border-info text-white fw-bold">
                   add to cart
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -114,9 +115,9 @@ export default class Ourproduct extends Component {
                 <p className="mb-1">
                   <i class="fa-solid fa-indian-rupee-sign me-2"></i>1499.00
                 </p>
-                <a className="btn text-uppercase border border-info text-white fw-bold">
+                <Link  to=""className="btn text-uppercase border border-info text-white fw-bold">
                   add to cart
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -133,9 +134,9 @@ export default class Ourproduct extends Component {
                 <p className="mb-1">
                   <i class="fa-solid fa-indian-rupee-sign me-2"></i>099.00
                 </p>
-                <a className="btn text-uppercase border border-info text-white fw-bold">
+                <Link  to=""className="btn text-uppercase border border-info text-white fw-bold">
                   add to cart
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -152,9 +153,9 @@ export default class Ourproduct extends Component {
                 <p className="mb-1">
                   <i class="fa-solid fa-indian-rupee-sign me-2"></i>1499.00
                 </p>
-                <a className="btn text-uppercase border border-info text-white fw-bold">
+                <Link  to=""className="btn text-uppercase border border-info text-white fw-bold">
                   add to cart
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -171,9 +172,9 @@ export default class Ourproduct extends Component {
                 <p className="mb-1">
                   <i class="fa-solid fa-indian-rupee-sign me-2"></i>4999.00
                 </p>
-                <a className="btn text-uppercase border border-info text-white fw-bold">
+                <Link  to=""className="btn text-uppercase border border-info text-white fw-bold">
                   add to cart
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -190,9 +191,9 @@ export default class Ourproduct extends Component {
                 <p className="mb-1">
                   <i class="fa-solid fa-indian-rupee-sign me-2"></i>1499.00
                 </p>
-                <a className="btn text-uppercase border border-info text-white fw-bold">
+                <Link  to=""className="btn text-uppercase border border-info text-white fw-bold">
                   add to cart
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -209,9 +210,9 @@ export default class Ourproduct extends Component {
                 <p className="mb-1">
                   <i class="fa-solid fa-indian-rupee-sign me-2"></i>2999.00
                 </p>
-                <a className="btn text-uppercase border border-info text-white fw-bold">
+                <Link  to=""className="btn text-uppercase border border-info text-white fw-bold">
                   add to cart
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -228,9 +229,9 @@ export default class Ourproduct extends Component {
                 <p className="mb-1">
                   <i class="fa-solid fa-indian-rupee-sign me-2"></i>999.00
                 </p>
-                <a className="btn text-uppercase border border-info text-white fw-bold">
+                <Link  to=""className="btn text-uppercase border border-info text-white fw-bold">
                   add to cart
-                </a>
+                </Link>
               </div>
             </div>
           </Slider>

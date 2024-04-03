@@ -80,7 +80,7 @@ export default function Cart() {
                               <img
                                 src={e.image}
                                 className="img-cart"
-                                
+                                alt="" 
                               />
                             </Link>
                           </td>
@@ -144,7 +144,7 @@ export default function Cart() {
                               <img
                                 src={e.image}
                                 className="img-cart"
-                                
+                                alt=""
                               />
                             </Link>
                           </td>

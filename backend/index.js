@@ -5,7 +5,8 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors()); // Use the cors middleware
 const PORT = process.env.PORT || 8000;
-require("dotenv").config(); // Load environment variables from .env file
+// Load environment variables from .env file
+require("dotenv").config(); 
 
 mongoose
   .connect(process.env.DATABASE,)
