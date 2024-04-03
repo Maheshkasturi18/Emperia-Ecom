@@ -21,7 +21,7 @@ export default function Product() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/products");
+        const response = await axios.get("https://emperia-ecom.onrender.com/api/products");
         setProducts(response.data); // Set the fetched product data in state
         setTotalPages(Math.ceil(response.data.length / itemsPerPage));
       } catch (error) {
