@@ -5,10 +5,12 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors()); // Use the cors middleware
 const PORT = process.env.PORT || 8000;
+require("dotenv").config(); // Load environment variables from .env file
 
-mongoose.connect(
-  process.env.DATABASE
-);
+mongoose
+  .connect(process.env.DATABASE,)
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.error("Error connecting to MongoDB:", err));
 
 const productSchema = new mongoose.Schema({
   id: Number,
