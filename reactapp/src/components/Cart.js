@@ -23,7 +23,7 @@ export default function Cart() {
 
   useEffect(() => {
     total();
-  }, [total]);
+  }, [getdata]);
 
   // add data
 
