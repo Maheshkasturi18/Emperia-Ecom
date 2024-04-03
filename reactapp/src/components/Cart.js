@@ -13,17 +13,18 @@ export default function Cart() {
   // console.log(price);
 
   // total
+  useEffect(() => {
   const total = () => {
     let price = 0;
-    getdata.map((ele, k) => {
+    getdata.forEach((ele, k) => {
       price = ele.price * ele.qnty + price;
     });
     setPrice(price);
   };
 
-  useEffect(() => {
-    total();
-  }, [getdata]);
+  total();
+}, [getdata]); // Assuming getdata is the dependency that triggers the useEffect
+
 
   // add data
 
