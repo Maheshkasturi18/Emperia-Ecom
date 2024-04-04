@@ -18,7 +18,7 @@ export default function BathCare() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/products", {
+        const response = await axios.get("https://emperia-ecom.onrender.com/api/products", {
         params: {
           title: "Bathroom Care"
         }
