@@ -217,13 +217,13 @@ export default function Cart() {
                     </tr>
                     <tr>
                       <td className="p-4">
-                        <button
+                        <Link to="/checkout"
                           type="button"
                           id="button"
                           className="btn btn-sm fs-5 px-4 py-2 py-lg-2 rounded-pill w-100 fw-semibold"
                         >
                           Procced to checkout
-                        </button>
+                        </Link>
                       </td>
                     </tr>
                   </tbody>

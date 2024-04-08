@@ -17,6 +17,7 @@ import GenCare from "./components/Products/GenCare";
 import SurfaceCare from "./components/Products/SurfaceCare";
 import KitchenCare from "./components/Products/KitchenCare";
 import BathCare from "./components/Products/BathCare";
+import Checkout from "./components/Checkout";
 
 function App() {
   return (
@@ -38,6 +39,8 @@ function App() {
           <Route path="kitchencare/" element={<KitchenCare/>}></Route>
           <Route path="bathroomcare/" element={<BathCare />}></Route>
           <Route path="cart/" element={<Cart />}></Route>
+          <Route path="checkout/" element={<Checkout />}></Route>
+
         </Routes>
         <Footer />
       </Router>
