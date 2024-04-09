@@ -1,7 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as Yup from "yup";
+import { useSelector } from "react-redux";
 
 export default function Checkout() {
+  const getdata = useSelector((state) => state.cartreducer.carts);
+  // console.log(getdata);
+
+  const [price, setPrice] = useState(0);
+  // console.log(price);
+
+  // total
+  useEffect(() => {
+    const total = () => {
+      let price = 0;
+      getdata.forEach((ele, k) => {
+        price = ele.price * ele.qnty + price;
+      });
+      setPrice(price);
+    };
+
+    total();
+  }, [getdata]); // Assuming getdata is the dependency that triggers the useEffect
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -46,12 +66,12 @@ export default function Checkout() {
     setErrors({});
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    // e.preventDefault();
 
     try {
       await validationSchema.validate(formData, { abortEarly: false });
-      console.log("Form Submitted", formData);
+      console.log("order placed", formData);
       resetForm();
     } catch (error) {
       const newErrors = {};
@@ -62,6 +82,10 @@ export default function Checkout() {
 
       setErrors(newErrors);
     }
+  };
+
+  const handlePlaceOrderClick = () => {
+    handleSubmit(); // Trigger form submission and validation
   };
 
   const handleChange = (e) => {
@@ -76,7 +100,7 @@ export default function Checkout() {
   };
 
   return (
-    <section className="contact-us">
+    <section className="checkout">
       <div className="container ">
         <h2 className="">Checkout</h2>
         <div className="row py-5">
@@ -88,9 +112,7 @@ export default function Checkout() {
             </h4>
             <form className="py-3" action="#!" onSubmit={handleSubmit}>
               <div className="row mb-4">
-                {/* <div className="form-text  text-black fs-5">
-                  Firstname <span className="text-danger">*</span>
-                </div> */}
+                
 
                 <div className="col">
                   <label
@@ -158,7 +180,10 @@ export default function Checkout() {
                   id="country"
                   className="form-control bg-light-subtle"
                   name="country"
+                  value="India"
                 /> */}
+                <p className="m-0 fw-semibold">India</p>
+
               </div>
 
               <div className="mb-4">
@@ -189,36 +214,36 @@ export default function Checkout() {
               </div>
 
               <div className="mb-4">
-                <label for="address" className="form-label  fw-bold">
+                <label for="city" className="form-label  fw-bold">
                   Town / City <span className="text-danger">*</span>
                 </label>
                 <input
                   type="text"
-                  id="address"
+                  id="city"
                   className="form-control bg-light-subtle p-2"
-                  name="address"
-                  value={formData.address}
+                  name="city"
+                  value={formData.city}
                   onChange={handleChange}
                 />
-                {errors.address && (
-                  <div className="error">{errors.address}</div>
+                {errors.city && (
+                  <div className="error">{errors.city}</div>
                 )}
               </div>
 
               <div className="mb-4">
-                <label for="address" className="form-label  fw-bold">
+                <label for="state" className="form-label  fw-bold">
                   State <span className="text-danger">*</span>
                 </label>
                 <input
                   type="text"
-                  id="address"
+                  id="state"
                   className="form-control bg-light-subtle p-2"
-                  name="address"
-                  value={formData.address}
+                  name="state"
+                  value={formData.state}
                   onChange={handleChange}
                 />
-                {errors.address && (
-                  <div className="error">{errors.address}</div>
+                {errors.state && (
+                  <div className="error">{errors.state}</div>
                 )}
               </div>
 
@@ -288,8 +313,55 @@ export default function Checkout() {
           </div>
 
           <div className="col-lg-5  ">
-            <div className="p-4 border border-lightgrey">
+            <div className="p-4 border border-2 border-lightgrey checkout">
               <h4 className="fw-bold">Your order</h4>
+
+              <table className="t1 mt-4">
+                <thead>
+                  <tr>
+                    <th className=" fs-5">Product</th>
+                    <th></th>
+
+                    <th className="text-end fs-5">Subtotal</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {getdata.map((e) => {
+                    return (
+                      <>
+                        <tr key={e.id}>
+                          <td>{e.description}</td>
+
+                          <td> x{e.qnty}</td>
+
+                          <td className="text-end">₹ {e.price * e.qnty}.00</td>
+                        </tr>
+                      </>
+                    );
+                  })}
+                </tbody>
+              </table>
+
+              <table className="t2 mb-5">
+                <tbody>
+                  <tr className="d-flex justify-content-between ">
+                    <td>Subtotal</td>
+                    <td>₹ {price}.00</td>
+                  </tr>
+                  <tr className="d-flex justify-content-between">
+                    <td>Total</td>
+                    <td>₹ {price}.00</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h6>Paytm Payment Gateway</h6>
+              <img src="images/checkout_img.svg" alt="" />
+              <p className="p-3 bg-secondary bg-opacity-25 my-4">
+                The best payment gateway provider in India for e-payment through
+                credit card, debit card & netbanking.
+              </p>
 
               <p>
                 Your personal data will be used to process your order, support
@@ -298,8 +370,10 @@ export default function Checkout() {
               </p>
 
               <button
-                className="btn btn-outline-info  rounded-5 px-3 py-2 border-2 fw-bold"
-                type="submit"
+                type="button"
+                id="button"
+                className="btn btn-sm fs-5 px-4 py-2 py-lg-2 rounded-pill w-100 fw-semibold"
+                onClick={handlePlaceOrderClick}
               >
                 Place order
               </button>

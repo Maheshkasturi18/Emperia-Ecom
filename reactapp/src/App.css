@@ -57,6 +57,23 @@
   background-color: rgb(247, 247, 247);
 }
 
+/* checkout */
+.checkout .t1 td,th{
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.checkout .t1,.t2{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.checkout .t2 tr{
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+
 /* products */
 
 .filter-sort{

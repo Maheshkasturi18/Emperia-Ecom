@@ -267,6 +267,7 @@ export default function Contactus() {
               <button
                 className="btn btn-outline-info btn-block rounded-5 px-3 py-2 border-2 fw-bold"
                 type="submit"
+               
               >
                 Send Message
               </button>
