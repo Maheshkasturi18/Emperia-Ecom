@@ -4,11 +4,12 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { ADD } from "../../Redux/Actions/action";
+import { Link } from "react-router-dom";
 
 export default function Product() {
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
+  const [totalPages, setTotalPages] = useState(2);
   const itemsPerPage = 12;
 
   const dispatch = useDispatch();
@@ -21,7 +22,9 @@ export default function Product() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("https://emperia-ecom.onrender.com/api/products");
+        const response = await axios.get(
+          "https://emperia-ecom.onrender.com/api/products"
+        );
         setProducts(response.data); // Set the fetched product data in state
         setTotalPages(Math.ceil(response.data.length / itemsPerPage));
       } catch (error) {
@@ -75,8 +78,9 @@ export default function Product() {
               key={product.id}
               className="card col-lg-3 col-md-4 col-6 mb-4 border-0 bg-blue product-card"
             >
-              <img src={product.image} alt="" className="img-fluid" />
-
+              <Link to={`/innerdetails/${product.id}`}>
+                <img src={product.image} alt="" className="img-fluid" />
+              </Link>
               <div className="card-body px-0">
                 <p className="text-secondary">{product.title}</p>
                 <h5>{product.description}</h5>

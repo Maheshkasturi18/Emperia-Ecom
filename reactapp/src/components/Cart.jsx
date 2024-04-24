@@ -77,7 +77,7 @@ export default function Cart() {
                             ></i>
                           </td>
                           <td className="text-center">
-                            <Link to={`/cardDetails/${e.id}`}>
+                            <Link to={`/innerdetails/${e.id}`}>
                               <img
                                 src={e.image}
                                 className="img-cart"
@@ -141,7 +141,7 @@ export default function Cart() {
                         </tr>
                         <tr>
                           <td className="text-center">
-                            <Link to={`/cardDetails/${e.id}`}>
+                            <Link to={`/innerdetails/${e.id}`}>
                               <img
                                 src={e.image}
                                 className="img-cart"

@@ -18,6 +18,7 @@ import SurfaceCare from "./components/Products/SurfaceCare";
 import KitchenCare from "./components/Products/KitchenCare";
 import BathCare from "./components/Products/BathCare";
 import Checkout from "./components/Checkout";
+import InnerDetails from "./components/InnerDetails";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="corevalue/" element={<Corevalue />}></Route>
           <Route path="contactus/" element={<Contactus />}></Route>
           <Route path="products/" element={<Product />}></Route>
+          <Route path="/innerdetails/:id" element={<InnerDetails/>}></Route>
           <Route path="personalcare/" element={<PersonalCare />}></Route>
           <Route path="generalcare/" element={<GenCare />}></Route>
           <Route path="floorcare/" element={<SurfaceCare />}></Route>
