@@ -20,7 +20,7 @@ export default class Corevalue extends Component {
             </div>
             <div className="col-lg-6 py-3">
               <h1 className="mb-4">Vision</h1>
-              <p>
+              <p  className="fs-18">
                 Our vision is to promote public health and hygiene by providing
                 leading hygiene care solutions that enable individuals and
                 communities to maintain a healthy and safe environment.
@@ -31,7 +31,7 @@ export default class Corevalue extends Component {
           <div className="row py-3">
             <div className="col-lg-6 py-3">
               <h1 className="mb-4">Mission</h1>
-              <p>
+              <p  className="fs-18">
                 Our mission is to promote healthy living by;
                 <ul>
                   <li>
@@ -66,7 +66,7 @@ export default class Corevalue extends Component {
             </div>
             <div className="col-lg-6 py-3">
               <h1 className="mb-4">Brand Values</h1>
-              <p>
+              <p  className="fs-18">
                 We believe in providing effective and innovative hygiene care
                 solutions that enable individuals and communities to maintain a
                 clean and healthy environment; therefore, we have set standards

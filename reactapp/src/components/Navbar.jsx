@@ -48,35 +48,46 @@ export default function Navbar() {
                 <li className="nav-item dropdown  px-1 py-1 fw-semibold">
                   <Link
                     className="nav-link dropdown-toggle  px-3 px-lg-2 "
-                  
                     data-bs-toggle="dropdown"
                   >
                     About Us
                   </Link>
 
-                  <div className="dropdown-menu dropdown-content">
-                    <Link className="dropdown-item" to="history">
-                      History
-                    </Link>
+                  <ul className="dropdown-menu dropdown-content">
+                    <li>
+                      <Link className="dropdown-item" to="history">
+                        History
+                      </Link>
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
 
-                    <hr class="dropdown-divider" />
+                    <li>
+                      <Link className="dropdown-item" to="leadership">
+                        Leadership
+                      </Link>
+                    </li>
 
-                    <Link className="dropdown-item" to="leadership">
-                      Leadership
-                    </Link>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
 
-                    <hr class="dropdown-divider" />
+                    <li>
+                      <Link className="dropdown-item" to="corevalue">
+                        Core Values
+                      </Link>
+                    </li>
 
-                    <Link className="dropdown-item" to="corevalue">
-                      Core Values
-                    </Link>
-
-                    <hr class="dropdown-divider" />
-
-                    <Link className="dropdown-item" to="distribution">
-                      Distribution
-                    </Link>
-                  </div>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="distribution">
+                        Distribution
+                      </Link>
+                    </li>
+                  </ul>
                 </li>
 
                 <li className="nav-item dropdown  px-1 py-1 fw-semibold ">
@@ -152,7 +163,10 @@ export default function Navbar() {
 
                   <ul className="dropdown-menu dropdown-content">
                     <li>
-                      <Link className="dropdown-item" to="https://www.facebook.com/">
+                      <Link
+                        className="dropdown-item"
+                        to="https://www.facebook.com/"
+                      >
                         Facebook
                       </Link>
                     </li>
@@ -160,7 +174,10 @@ export default function Navbar() {
                       <hr class="dropdown-divider" />
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="https://www.instagram.com/">
+                      <Link
+                        className="dropdown-item"
+                        to="https://www.instagram.com/"
+                      >
                         Instagram
                       </Link>
                     </li>
@@ -168,7 +185,10 @@ export default function Navbar() {
                       <hr class="dropdown-divider" />
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="https://in.linkedin.com/">
+                      <Link
+                        className="dropdown-item"
+                        to="https://in.linkedin.com/"
+                      >
                         LinkedIn
                       </Link>
                     </li>
@@ -208,7 +228,6 @@ export default function Navbar() {
               </ul>
             </div>
           </div>
-
 
           <Link to="/cart" type="button" className="btn  position-relative">
             <i className="fa-solid fa-cart-shopping cart"></i>
