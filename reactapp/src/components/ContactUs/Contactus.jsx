@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./Contactus.css";
 import * as Yup from "yup";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Contactus() {
   const [formData, setFormData] = useState({
@@ -23,7 +26,7 @@ export default function Contactus() {
       .required(),
     email: Yup.string().required("Email is required").email("invalid email"),
     subject: Yup.string().required("Subject is required"),
-    comment: Yup.string().required("Comment / Message is required")
+    comment: Yup.string().required("Comment / Message is required"),
   });
 
   const resetForm = () => {
@@ -34,7 +37,7 @@ export default function Contactus() {
       email: "",
       contactNumber: "",
       subject: "",
-      comment: ""
+      comment: "",
     }); // Reset formData to an empty object or to initial values
     // Optionally, reset any other form-related state variables here
 
@@ -57,6 +60,21 @@ export default function Contactus() {
 
       setErrors(newErrors);
     }
+
+    emailjs
+      .sendForm("service_5jy2y3q", "template_oybdrdt", form.current, {
+        publicKey: "y6Xb9utVu8zhVIXO2",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+
+    toast.success("Message Sent!");
   };
 
   const handleChange = (e) => {
@@ -70,9 +88,12 @@ export default function Contactus() {
     });
   };
 
+  const form = useRef();
+
   return (
     <section className="contact-us">
       <div className="container py-5 ">
+        <ToastContainer position="top-center" autoClose={1000} />
         <div className="row">
           <div className="col-lg-6 p-5">
             <h1>Get In Touch</h1>
@@ -136,6 +157,7 @@ export default function Contactus() {
             <form
               class=" border border-light p-5 bg-white"
               action="#!"
+              ref={form}
               onSubmit={handleSubmit}
             >
               <div className="row mb-4">
@@ -209,9 +231,7 @@ export default function Contactus() {
                   value={formData.email}
                   onChange={handleChange}
                 />
-                {errors.email && (
-                  <div className="error">{errors.email}</div>
-                )}
+                {errors.email && <div className="error">{errors.email}</div>}
               </div>
 
               <div className="mb-4">
@@ -267,7 +287,6 @@ export default function Contactus() {
               <button
                 className="btn btn-outline-info btn-block rounded-5 px-3 py-2 border-2 fw-bold"
                 type="submit"
-               
               >
                 Send Message
               </button>

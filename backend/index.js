@@ -13,6 +13,7 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
+// products
 const productSchema = new mongoose.Schema({
   id: Number,
   title: String,
@@ -31,7 +32,6 @@ app.post("/api/products", async (req, res) => {
   res.json(val);
 });
 
-
 app.get("/api/products", async (req, res) => {
   try {
     const { title } = req.query;
@@ -47,8 +47,7 @@ app.get("/api/products", async (req, res) => {
     }
 
     res.json(allProducts);
-  } 
-  catch (error) {
+  } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });
   }
