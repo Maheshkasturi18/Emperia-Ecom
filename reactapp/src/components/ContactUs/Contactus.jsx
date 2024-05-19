@@ -45,6 +45,7 @@ export default function Contactus() {
   };
 
   // i have added email js
+  // dummy text
   const handleSubmit = async (e) => {
     e.preventDefault();
 
