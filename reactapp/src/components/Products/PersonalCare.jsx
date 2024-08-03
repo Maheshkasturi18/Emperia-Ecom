@@ -4,9 +4,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { ADD } from "../../Redux/Actions/action";
+import { baseURL } from "../../Url";
 
 export default function PersonalCare() {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -18,22 +20,23 @@ export default function PersonalCare() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("https://emperia-ecom.onrender.com/api/products", {
-        params: {
-          title: "Personal Care"
-        }
-      });
+        const response = await axios.get(`${baseURL}/api/products`, {
+          params: {
+            title: "Personal Care",
+          },
+        });
         setProducts(response.data); // Set the fetched product data in state
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
         // Handle errors, such as displaying a toast message
         toast.error("Error fetching product data");
+        setLoading(false);
       }
     };
 
     fetchProducts();
   }, []);
-
 
   return (
     <section className="bg-blue">
@@ -53,38 +56,45 @@ export default function PersonalCare() {
           </select>
         </div>
 
-        <div className="row py-5">
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className="card col-lg-3 col-md-4 col-6 mb-4 border-0 bg-blue product-card"
-            >
-              <img src={product.image} alt="" className="img-fluid" />
+        {loading ? (
+          <div className="text-center py-5">
+            <i className="fa fa-spinner fa-spin fa-3x"></i>
+            <p>Loading...</p>
+          </div>
+        ) : (
+          <div className="row py-5">
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className="card col-lg-3 col-md-4 col-6 mb-4 border-0 bg-blue product-card"
+              >
+                <img src={product.image} alt="" className="img-fluid" />
 
-              <div className="card-body px-0">
-                <p className="text-secondary">{product.title}</p>
-                <h5>{product.description}</h5>
-                <p>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star"></i>
-                </p>
+                <div className="card-body px-0">
+                  <p className="text-secondary">{product.title}</p>
+                  <h5>{product.description}</h5>
+                  <p>
+                    <i className="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
+                  </p>
 
-                <p className="text-center fw-bold">₹ {product.price}.00</p>
-                <button
-                  type="button"
-                  id="button"
-                  className="btn btn-sm fs-5 px-md-4  py-md-2 rounded-pill  fw-semibold"
-                  onClick={() => send(product)}
-                >
-                  Add to cart
-                </button>
+                  <p className="text-center fw-bold">₹ {product.price}.00</p>
+                  <button
+                    type="button"
+                    id="button"
+                    className="btn btn-sm fs-5 px-md-4  py-md-2 rounded-pill  fw-semibold"
+                    onClick={() => send(product)}
+                  >
+                    Add to cart
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

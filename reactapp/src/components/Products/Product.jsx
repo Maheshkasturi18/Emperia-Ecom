@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { ADD } from "../../Redux/Actions/action";
 import { Link } from "react-router-dom";
+import { baseURL } from "../../Url";
 
 export default function Product() {
   const [products, setProducts] = useState([]);
@@ -23,9 +24,7 @@ export default function Product() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(
-          "https://emperia-ecom.onrender.com/api/products"
-        );
+        const response = await axios.get(`${baseURL}/api/products`);
         setProducts(response.data); // Set the fetched product data in state
         setTotalPages(Math.ceil(response.data.length / itemsPerPage));
         setLoading(false);
@@ -76,8 +75,7 @@ export default function Product() {
         </div>
 
         {loading ? (
-          // Show loading indicator while loading
-          <div className="text-center">
+          <div className="text-center py-5">
             <i className="fa fa-spinner fa-spin fa-3x"></i>
             <p>Loading...</p>
           </div>
@@ -102,7 +100,7 @@ export default function Product() {
                     <i className="fa-regular fa-star"></i>
                   </p>
 
-                  <p className="text-center fw-bold">₹ {product.price}.00</p>
+                  <p className="text-start fw-bold">₹ {product.price}.00</p>
                   <button
                     type="button"
                     id="button"
