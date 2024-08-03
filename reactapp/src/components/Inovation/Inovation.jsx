@@ -6,20 +6,7 @@ export default class Inovation extends Component {
     return (
       <section className="tech-bg ">
         <div className="tech-head">
-          {/* <div className="tech-vid-bg">
-            <iframe
-            title="youtube Video"
-              className="elementor-background-video-embed"
-              frameborder="0"
-              autoplay
-              
-              width="100%"
-              height="400px"
-              src="https://www.youtube.com/embed/AO7tv9uNiGk?controls=0&amp;rel=0&amp;playsinline=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Femperia1900.com&amp;widgetid=1"
-            />        
-          </div> */}
-
-          <h1 className="tech-img-content fw-bold text-white">
+          <h1 className="tech-img-content fw-bold ">
             Smart Micellar Technology
           </h1>
         </div>

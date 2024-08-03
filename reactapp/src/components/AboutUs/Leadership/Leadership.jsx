@@ -6,7 +6,7 @@ export default class Leadership extends Component {
     return (
       <section className="lead-bg">
         <div className="lead-head">
-          <h1 className="lead-head-name fw-bold "> Our History</h1>
+          <h1 className="lead-head-name fw-bold ">Leadership</h1>
         </div>
 
         <div className="container py-4 lh-lg">

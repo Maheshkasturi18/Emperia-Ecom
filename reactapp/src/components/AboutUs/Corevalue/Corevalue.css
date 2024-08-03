@@ -1,19 +1,20 @@
-.core-bg{
-    background-color: rgb(242, 253, 253);
+.core-bg {
+  background-color: rgb(242, 253, 253);
 }
 
-.core-head{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-    /* background-image: url("public/images/corevalue-main-img.jpg"); */
+.core-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background-color: #1dbfc1;
+  /* background-image: url("public/images/corevalue-main-img.jpg"); */
 }
 
-.fs-18{
-    font-size: 18px;
+.fs-18 {
+  font-size: 18px;
 }
 
-.core-bg h1{
-    color:  #1DBFC1;
+.core-bg h1 {
+  color: #1dbfc1;
 }

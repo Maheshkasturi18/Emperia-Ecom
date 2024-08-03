@@ -2,20 +2,20 @@
     background-image: url("public/images/history-main-img.jpg");
 } */
 
-.hist-head-name{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
+.hist-head-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background-color: #1dbfc1;
 }
 
-.his-bg{
-    background-color: rgb(242, 253, 253);
+.his-bg {
+  background-color: rgb(242, 253, 253);
 }
 
-.his-bg p{
-    font-size: 18px;
+.his-bg p {
+  font-size: 18px;
 }
-
 
 /* background-color: #1D57C785; */

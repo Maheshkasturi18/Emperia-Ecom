@@ -44,8 +44,6 @@ export default function Contactus() {
     setErrors({});
   };
 
-  // i have added email js
-  // dummy text
   const handleSubmit = async (e) => {
     e.preventDefault();
 
