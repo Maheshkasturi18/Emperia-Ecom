@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import { useSelector } from "react-redux";
 
 export default function Checkout() {
-  const getdata = useSelector((state) => state.cartreducer.carts);
+  const getdata = useSelector((state) => state.cart.carts);
   // console.log(getdata);
 
   const [price, setPrice] = useState(0);

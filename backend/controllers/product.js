@@ -1,7 +1,7 @@
 const Product = require("../models/product");
 
 async function handlePostProduct(req, res) {
-  console.warn("inside post function");
+  // console.warn("inside post function");
 
   const products = new Product(req.body);
   const val = await products.save();

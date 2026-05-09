@@ -11,12 +11,12 @@ footer li{
 
 
 
-.tushar{
+.powered-by{
     color: rgb(39, 39, 39);
     transition: all 0.5s ease;
 }
 
-.tushar:hover{
+.powered-by:hover{
     color: #1DBFC1;
 }
 

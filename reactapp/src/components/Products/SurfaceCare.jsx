@@ -3,7 +3,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
-import { ADD } from "../../Redux/Actions/action";
+import { ADD } from "../../Redux/Slices/CartSlice";
 import { baseURL } from "../../Url";
 
 export default function SurfaceCare() {
@@ -12,7 +12,7 @@ export default function SurfaceCare() {
 
   const dispatch = useDispatch();
 
-  const send = (product) => {
+  const add = (product) => {
     dispatch(ADD(product));
     toast.success("Item added in your cart!");
   };
@@ -86,7 +86,7 @@ export default function SurfaceCare() {
                     type="button"
                     id="button"
                     className="btn btn-sm fs-5 px-md-4  py-md-2 rounded-pill  fw-semibold"
-                    onClick={() => send(product)}
+                    onClick={() => add(product)}
                   >
                     Add to cart
                   </button>

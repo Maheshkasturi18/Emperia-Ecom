@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { ADD, REMOVE, DLT } from "../Redux/Actions/action";
+import { ADD, REMOVE, DELETE } from "../Redux/Slices/CartSlice";
 
 export default function InnerDetails() {
   const [products, setProducts] = useState(null);
   const { id } = useParams();
   const history = useNavigate();
-  const getdata = useSelector((state) => state.cartreducer.carts);
+  const getdata = useSelector((state) => state.cart.carts);
   const dispatch = useDispatch();
 
-  const compare = (id) => {
-    let comparedata = getdata.filter((e) => {
-      return e.id == id;
-    });
+  useEffect(() => {
+    const comparedata = getdata.filter((e) => e.id === id);
     setProducts(comparedata);
-  };
+  }, [id, getdata]);
 
   // add data
   const send = (e) => {
@@ -30,13 +28,9 @@ export default function InnerDetails() {
 
   // delete btn
   const dlt = (id) => {
-    dispatch(DLT(id));
+    dispatch(DELETE(id));
     history("/");
   };
-
-  useEffect(() => {
-    compare(id);
-  }, [id]);
 
   return (
     <section className="bg-blue">

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { ADD, REMOVE, DLT } from "../Redux/Actions/action";
+import { ADD, REMOVE, DELETE } from "../Redux/Slices/CartSlice";
 
 export default function Cart() {
-  const getdata = useSelector((state) => state.cartreducer.carts);
+  const getdata = useSelector((state) => state.cart.carts);
   // console.log(getdata);
 
   const dispatch = useDispatch();
@@ -28,7 +28,7 @@ export default function Cart() {
 
   // add data
 
-  const send = (e) => {
+  const add = (e) => {
     // console.log(e);
     dispatch(ADD(e));
   };
@@ -40,7 +40,7 @@ export default function Cart() {
 
   // delete btn
   const dlt = (id) => {
-    dispatch(DLT(id));
+    dispatch(DELETE(id));
   };
 
   return (
@@ -65,7 +65,6 @@ export default function Cart() {
 
                 <tbody>
                   {getdata.map((e) => {
-                    console.warn("map", e.qnty);
 
                     return (
                       <>
@@ -103,7 +102,7 @@ export default function Cart() {
                               <span style={{ fontSize: 22 }}>{e.qnty}</span>
                               <span
                                 style={{ fontSize: 24 }}
-                                onClick={() => send(e)}
+                                onClick={() => add(e)}
                               >
                                 +
                               </span>
@@ -127,7 +126,6 @@ export default function Cart() {
               <table>
                 <tbody>
                   {getdata.map((e) => {
-                    console.warn("map", e.qnty);
 
                     return (
                       <>
@@ -177,7 +175,7 @@ export default function Cart() {
                               <span
                                 
                                 className="dec-btn"
-                                onClick={() => send(e)}
+                                onClick={() => add(e)}
                               >
                                 +
                               </span>

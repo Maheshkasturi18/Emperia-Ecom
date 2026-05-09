@@ -113,11 +113,11 @@ class Footer extends Component {
         <div class="container  d-lg-flex p-3 border-top border-grey justify-content-between ">
           <div className="copyright">
             <div>
-              Copyright © 2024 Emperia 1900
+              Copyright © 2026 Emperia 1900
             </div>
 
             <div>
-               Powered by <a href="/" target="_blank" className="tushar text-decoration-none fw-semibold"> MaheshKumar Kasturi </a>
+               Powered by <a href="https://mahesh-kasturi.vercel.app/" target="_blank" rel="noreferrer" className="powered-by text-decoration-none fw-semibold"> MaheshKumar Kasturi </a>
             </div>
           </div>
 
